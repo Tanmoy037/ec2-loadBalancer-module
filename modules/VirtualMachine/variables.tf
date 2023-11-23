@@ -1,4 +1,9 @@
-  variable "instance_type" {}
-  variable "ami" {}
-  variable "key_name" {}
-  variable "vpc_security_group_ids" {}
+variable "ami_id" {
+    type = string
+    
+}
+
+variable "instance" {
+    type = string
+    
+}
