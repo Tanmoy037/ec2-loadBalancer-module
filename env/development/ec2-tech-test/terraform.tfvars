@@ -1,3 +1,12 @@
-ami_id="ami-02a2af70a66af6dfb"
+ami_id="ami-0fc5d935ebf8bc3bc"
 instance="t2.micro"
-region = "ap-south-1"
+region = "us-east-1"
+domain_name = "tanmoysantra.cloud"
+health_check_interval = 30
+health_check_timeout = 5
+healthy_threshold = 2
+lb_name = "example-lb"
+port = 443
+protocol = "HTTPS"
+target_group_name = "example-target-group"
+unhealthy_threshold = "2"
