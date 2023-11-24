@@ -1,11 +1,64 @@
+variable "lb_name" {
+  description = "Name of the load balancer"
+}
+
+variable "internal" {
+  description = "Is the load balancer internal"
+  default     = false
+}
+
+variable "security_group_id" {
+  description = "The security group id to attach to the load balancer"
+}
+
 variable "subnet_ids" {
-  type = list(string)
+  description = "A list of subnet ids to attach to the load balancer"
+  type        = list(string)
+}
+
+variable "protocol" {
+  description = "The protocol for the listener"
+  default     = "HTTPS"
+}
+
+variable "port" {
+  description = "The port for the listener"
+  default     = 443
+}
+
+variable "target_group_name" {
+  description = "The name for the target group"
 }
 
 variable "vpc_id" {
-  type = string
+  description = "The vpc id for the target group"
 }
 
-variable "instance_id" {
-  type = string  
+variable "health_check_path" {
+  description = "The health check path"
+  default     = "/health"
+}
+
+variable "health_check_timeout" {
+  description = "The health check timeout"
+  default     = 5
+}
+
+variable "health_check_interval" {
+  description = "The health check interval"
+  default     = 30
+}
+
+variable "healthy_threshold" {
+  description = "The healthy threshold"
+  default     = 2
+}
+
+variable "unhealthy_threshold" {
+  description = "The unhealthy threshold"
+  default     = 2
+}
+
+variable "domain_name" {
+  description = "The domain name for the SSL certificate"
 }
